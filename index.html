@@ -1,44 +1,169 @@
 <!DOCTYPE html>
 <html>
+<!DOCTYPE html>
+<html>
 <head>
-	<title>JS test</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-	.container{max-width: 400px;margin: 0 auto; text-align: center;}
-	.buttonwrap{margin: 30px 0;}
-	input{cursor: pointer;margin: 0 10px 0 0;width: 60px;height: 30px;}
-	img{width: 180px;height: auto;}
-	p{font-size: 16px;line-height: 21px;color:#333;font-family: arial, sans-serif;margin: 30px 0;}
-	</style>
+    <title>Task 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel='shortcut icon' href="">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<p>Click on the buttons to view phone model.</p>
-		<div class="buttonwrap">
-			<input type="button" value="Black" onclick="showBlack()"/> 
-			<input type="button" value="Blue" onclick="showBlue()"/>
-			<input type="button" value="Gold" onclick="showGold()"/>
-			<input type="button" value="Rose" onclick="showRose()"/>
-		</div>
-		<img src = "" id = "showImage"/>	
-	</div>
-	<script type = "text/javascript">
-		function showBlack()
-		{
-			document.getElementById("showImage").src = "images/black.jpeg";
-		}
-		function showBlue()
-		{
-			document.getElementById("showImage").src ="images/blue.jpeg";
-		}
-		function showGold()
-		{
-			document.getElementById("showImage").src ="images/gold.jpeg";
-		} 
-		function showRose()
-		{
-			document.getElementById("showImage").src ="images/rose-gold.jpeg";
-		}  
-	</script>
+    <!-- Header Starts Here -->
+    <div class="nav-header-wrap">
+       <div class="container">
+          <div class="row nav-header">
+            <div class="hamburger serp-hamburger hasmenu" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+             <div class="col-lg-6 col-md-6 logo-wrap">
+                <!-- <h1><a href="/" class="logo text-hide">MyWebsite</a></h1>	 -->
+                <ul class="categories">
+                 <li><a href="">categories</a></li>
+                 <li><a href="">stores</a></li>
+                 <li><a href="">how it works</a></li>
+             </ul>	
+         </div>
+         <div class="col-lg-6 col-md-6 col-xs-9 pull-right">
+             <div class="searchbox">
+               <form action="/products/search" id="search-form">
+                <fieldset>
+                   <input type="text" id="search" class="search-input" name="search" placeholder="Search.." value="" autocomplete="off" />
+                   <input type="submit" class="pull-left" id="btnSubmit" value=""/>
+               </fieldset>
+           </form>
+       </div><!-- /.searchbox -->
+       <div class="cart"></div>
+   </div><!-- /.col-sm-6 -->
+</div><!-- /.nav-header -->
+</div><!-- /.container -->
+</div><!-- /header -->
+
+<section class="category-main container">
+    <div class="row cat-top">
+        <div class="imgwrap">
+            <img src="images/cat-main.jpg">
+        </div>
+        <div class="contentwrap">
+            <div class="title">Baby & Kids Cashback offers & Coupons</div>
+            <div class="offers"><span>64</span>Offers</div>
+            <div class="stores"><span>41</span>Stores</div>
+        </div>
+    </div>
+    <div>
+        <div class="content-right">
+            <div class="toggle-top">
+                <div>best offers</div>
+                <div>top stores</div>
+            </div>
+            <h4 class="mb-15 clearfix">Cashback offers & Coupons</h4>
+            <div class="coupon">
+                <img src="images/flintobox.jpg">
+                <div class="discount mt-10">Upto 30% discount</div>
+                <div class="desc">Now shop kids material</div>
+                <div class="shopbtn btn01"><a href="">shop & earn</a></div>
+            </div>
+            <div class="coup-wrap">
+                <a href="">
+                <div class="coup">
+                    <div class="img"><img src="images/img.jpg"></div>
+                </div>
+                <div class="title">Amazon</div>
+                <div class="offers">16 offers</div>
+                <div class="cb">Upto 8% Cashback</div>
+                </a>
+            </div>
+            <div class="coup-wrap">
+                <a href="">
+                <div class="coup">
+                    <div class="img"><img src="images/img.jpg"></div>
+                </div>
+                <div class="title">Amazon</div>
+                <div class="offers">16 offers</div>
+                <div class="cb">Upto 8% Cashback</div>
+                </a>
+            </div>
+            <div class="coup-wrap">
+                <a href="">
+                <div class="coup">
+                    <div class="img"><img src="images/img.jpg"></div>
+                </div>
+                <div class="title">Amazon</div>
+                <div class="offers">16 offers</div>
+                <div class="cb">Upto 8% Cashback</div>
+                </a>
+            </div>
+            <div class="coup-wrap">
+                <a href="">
+                <div class="coup">
+                    <div class="img"><img src="images/img.jpg"></div>
+                </div>
+                <div class="title">Amazon</div>
+                <div class="offers">16 offers</div>
+                <div class="cb">Upto 8% Cashback</div>
+                </a>
+            </div>
+        </div>
+        <div class="filter-hide">Filters</div>
+        <div class="content-left">
+        <div class="brandfilter-wrap brandFilter-tgt">
+        <div class= "filter1">
+        <h4 class="mb-15 clearfix"><span class="pull-left">Filter by Type</span></h4>
+        <ul>
+            <li>
+                <label>
+                    <input type="radio" id="" class="brand" name="brand" value=""> Option 1</label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" id="" class="brand" name="brand" value=""> Option 2</label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" id="" class="brand" name="brand" value=""> Option 3</label>
+            </li>
+        </ul>
+    </div>
+    <div class="filter2">
+        <h4 class="mb-15 clearfix"><span class="pull-left">Filter by Store</span></h4>
+        <input type="text" name="search2" value="" class="searchfilter" placeholder="search by store">
+        <div class="inner">
+            <label><input type="checkbox" name="opt1" value="opt1"> Option</label><br>
+            <label><input type="checkbox" name="opt2" value="opt2"> Option</label><br>
+            <label><input type="checkbox" name="opt3" value="opt3"> Option</label><br>
+            <label><input type="checkbox" name="opt4" value="opt4"> Option</label><br>
+            <label><input type="checkbox" name="opt5" value="opt5"> Option</label><br>
+            <label><input type="checkbox" name="opt6" value="opt6"> Option</label><br>
+            <label><input type="checkbox" name="opt7" value="opt7"> Option</label><br>
+            <label><input type="checkbox" name="opt8" value="opt8"> Option</label><br>
+        </div>
+    </div>
+    <div class="btn01 clearall">clear all</div>
+</div>
+        </div>
+    </div>
+</section>
+<!-- Footer Ends Here -->
+<script type="text/javascript">
+    $(".filter-hide").click(function(){
+    $(".content-left").toggle();
+});
+    $(".hamburger").click(function(){
+    $(".categories").toggle();
+});
+    function myFunction(x) {
+    x.classList.toggle("change");
+}
+$(".clearall").click(function(){
+    $('input:checkbox').removeAttr('checked');
+    $('input:radio').removeAttr('checked');
+});
+
+</script>
 </body>
 </html>
