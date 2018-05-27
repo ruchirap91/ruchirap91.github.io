@@ -84,6 +84,7 @@ fieldset{border:0;outline:0;margin:0;padding: 0;}
 @media only screen and (max-width: 1200px){
 	.hamburger{display: block;float: left;margin-left:5px;}
 	.categories{display: none; position: absolute; width: 200px; height: auto; left: 0; top: 44px; background: #fe4987; z-index: 1;}
+	.categories li a{border-bottom-color:#fff;}
 }
 @media only screen and (max-width: 1024px){
 	.content-right{width: 100%}
