@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Assignment 1</title>
+	<script src="jquery.min.js"></script>
+	<style type="text/css">
+	/*CSS RESET STARTS*/
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+	body {line-height: 1;margin:0;}
+	ol, ul {list-style: none;}
+	blockquote, q {quotes: none;}
+	blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
+	table {border-collapse: collapse;border-spacing: 0;}
+	/*CSS RESET ENDS*/
+	body{background: #000; color: #fff; font-family: arial, sans-serif; line-height: 1.2;}
+	.container{max-width: 1200px; margin: 60px auto;}
+	.list-wrap{background: #2b2b2b;border-radius: 10px;padding: 15px;}
+	.qstn, .ans{background: #787777;padding: 10px;margin-bottom: 10px;}
+	.answer, .runit{padding: 0 10px}
+	.btn{background: #fff; font-weight: bold; outline: none; border: none; cursor: pointer; margin: 10px 0; text-transform: uppercase;padding: 10px}
+	.btn:hover{background:#eee;}
+	.answer p, .result{display: none;}
+	.block{margin-bottom: 20px;background:#4c4b4b;}
+	.runcode{padding: 10px 23px;}
+	h1{font-size: 25px; text-align: center;margin-bottom: 20px;}
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1>JS Assignment 1</h1>
+		<div class="list-wrap">
+			<div class="block">
+				<div class="qstn">
+					<p>Question 1: Create a variable called carName, assign the value "Honda City" to it, and display it.</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>var carName = "Honda City"; document.write(carName);</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="182" data-theme-id="dark" data-slug-hash="aKpdmG" data-default-tab="html,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JS ASST1 Q1" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/aKpdmG/">JS ASST1 Q1</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 2: Create a variable called number, assign the value 150 to it, and display it.</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>var number = 150; document.write(number);</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="125" data-theme-id="dark" data-slug-hash="gKgPGb" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q2" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/gKgPGb/">JSA1 Q2</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 3: Display the sum of 5 + 10, using two variables x and y.</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>var x = 5, y = 10; document.write(x+y);</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="120" data-theme-id="dark" data-slug-hash="jKyWYm" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q3" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/jKyWYm/">JSA1 Q3</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 4: Create a third variable called z, assign x + y to it, and display it.</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>var x = 5, y = 10, z = x+y;document.write(z);</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="131" data-theme-id="dark" data-slug-hash="jKyWZm" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q4" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/jKyWZm/">JSA1 Q4</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 5: Use a single var keyword to create three variables with the following values: firstName = "John" lastName = "Doe" age = 35</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>var firstName = "John", lastName = "Doe", age = 35;</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="138" data-theme-id="dark" data-slug-hash="oyBxxg" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q5" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/oyBxxg/">JSA1 Q5</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 6: Create DOB constant. Assume calculateAge() function will give you age. Store the value of calculateAge() in your variable/constant</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>const DOB = calculateAge(age);</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="168" data-theme-id="dark" data-slug-hash="RJKaoG" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="RJKaoG" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/RJKaoG/">RJKaoG</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 7: Create a variable, assign some value to your variable and insert the value inside "div" element</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>var num = 10;
+						var div = document.createElement("div");
+						div.setAttribute("id", "test");
+						document.body.appendChild(div);
+					document.getElementById("test").innerHTML = num;</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="173" data-theme-id="dark" data-slug-hash="XYpdpQ" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q7" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/XYpdpQ/">JSA1 Q7</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 8: Use above question and use your choice of prompt box to display value of your variable.</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>var num = 10; alert(num);</p>
+				</div>
+				<div class="runit">
+					<button class="btn runalert">Run Code</button>
+					<div class="result">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.ans').click(function() {
+			$(this).next('p').toggle('slow', function() {
+
+			});
+		});
+		$('.runcode').click(function() {
+			$(this).next('.result').toggle('slow', function() {
+
+			});
+		});
+		$('.runalert').click(function(event) {
+			var num = 10; 
+			alert(num);
+		});
+	</script>
+</body>
+</html>
