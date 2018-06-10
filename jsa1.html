@@ -142,11 +142,26 @@
 				</div>
 				<div class="answer">
 					<button class="ans btn">View Answer</button>
-					<p>var num = 10; alert(num);</p>
+					<p>
+					<pre>
+					function runAlert() {
+					var num = prompt("Please enter your favorite number:",);
+					if (num == null || num == "") {
+						txt = "User cancelled the prompt.";
+					} else {
+						txt = "Number you entered is " + num;
+						console.log(num);
+							}
+						document.getElementById("display-num").innerHTML = txt;
+					}
+					runAlert();
+					</pre>
+					</p>
 				</div>
 				<div class="runit">
-					<button class="btn runalert">Run Code</button>
+					<button class="btn runalert" onclick="runAlert()">Run Code</button>
 					<div class="result">
+						<div id="display-num"></div>
 					</div>
 				</div>
 			</div>
@@ -163,10 +178,17 @@
 
 			});
 		});
-		$('.runalert').click(function(event) {
-			var num = 10; 
-			alert(num);
-		});
+		function runAlert() {
+			var num = prompt("Please enter your favorite number:",);
+			if (num == null || num == "") {
+				txt = "User cancelled the prompt.";
+			} else {
+				txt = "Number you entered is " + num;
+				console.log(num);
+			}
+			document.getElementById("display-num").innerHTML = txt;
+
+		}
 	</script>
 </body>
 </html>
