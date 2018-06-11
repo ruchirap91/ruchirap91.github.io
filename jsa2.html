@@ -1,0 +1,153 @@
+1.var counter = 0;
+ counter++; ++counter; alert( counter );
+What will alert this and why?
+
+Step1: counter++; At this step, the count value will be 0, it will increment after this step, it being post-increment operator
+Step2: ++counter;  At this point the count value is 1, and since this is a pre-increment operator, the count will now be 2
+Step3: alert( counter ); This will give a value of 2
+
+
+2. var n = 2; n *= 3 + 5; alert( n );
+What will alert this and why?
+
+Step1: var n = 2; variable n has the value 2 now 
+Step2: n *= 3 + 5; This basically means n= n * (3+5);
+Step3: This is = n*3 + n*5 = (2*3) + (2*5) = 16
+
+
+3. What are the final values of all variables a, b, c and d after the code below?
+var a = 1, b = 1; 
+var c = ++a; 
+var d = b++;
+
+a = 2
+b = 2
+c = 2
+d = 1
+
+This is so because when d = ++b; the value of d becomes 1, and then b changes tp 2
+
+
+4. What are the values of a and x after the code below?
+var a = 2; var x = 1 + (a *= 2);
+
+Step1: a=2;
+Step2: var x= 1 +(a *= 2)
+			= 1 + (a= a *2)
+			= 1 + 4
+			= 5
+
+5. Find greatest among 4 numbers
+
+var g = Math.max(a, b, c, d);
+document.write(g);
+
+6. Rewrite this if using the ternary operator '?':
+if (a + b < 4) { result = 'Below'; } else { result = 'Over'; }
+
+(a+b < 4) ? result = 'Below' : result = 'Over';
+
+7. Rewrite following to switch
+var a = +prompt('a?', ''); if (a == 0) { alert( 0 ); } if (a == 1) { alert( 1 ); } if (a == 2 || a == 3) { alert( '2,3' ); }
+
+
+var a = +prompt('a?', '');
+switch(a) {
+    case 0:
+        alert( 0 );
+        break;
+    case 1:
+        alert( 1 );
+        break;
+    case 2:
+        alert( '2,3' );
+        break;
+    case 3:
+        alert( '2,3' );
+        break;
+    default:
+        alert("goodbye");
+}
+
+
+8. Write a condition to check if the given age is of a teenager or no. 
+
+var result, age = +prompt('age?', '');
+
+(age <= 19 && age >= 13) ? result = 'teenager' : result = 'Not a teenager';
+alert(result);
+
+9. Print/alert todays Day using switch & if-else. Also print a message saying “It is a weekend” if Saturday or Sunday! or be creative.
+
+SWITCH CASE:
+
+var day = +prompt('day?', '');
+
+switch (day) {
+
+case 1: 
+    alert("It\’s Monday");
+        break;
+case 2:
+        alert("It\’s Tuesday");
+    break;
+
+case 3:
+        alert("It\’s Wednesday");
+    break;
+
+case 4:
+        alert("It\’s Thursday");
+    break;
+
+case 5:
+        alert("It\’s Friday");
+    break;
+
+case 6:
+        alert("It\’s Saturday. It is a weekend");
+    break;
+
+case 7:
+        alert("It\’s Sunday. It is a weekend");
+    break;
+
+default:
+        alert("Not a valid day");
+    break;  
+
+}
+
+IF ELSE:
+
+var day = +prompt('day?', '');
+
+if(day == 'monday' || day == 'tuesday' || day == 'wednesday' || day == 'thursday'){
+	alert("it is" + day);
+}
+else if(day == 'saturday' || day == 'sunday' ){
+	alert("It's the weekend! Today is " +day);
+}
+else{
+	alert("Not a valid day. Enter in the format: Monday")
+}
+
+
+10. Set the color (yellow:morning, blue:evening, black:night) of body tag based on your system time. showcase your creativity.
+var now = new Date();
+var time = now.getHours();
+//6- 16: morning
+//16 - 20: evening
+//20 - 6: night
+if(time >= 6 && time <=16){
+	document.body.style.background = yellow;
+}
+else if(time > 16 && time <20){
+	document.body.style.background = blue;
+}
+else if(time >=20 && time < 6){
+	document.body.style.background = black;
+}
+else{
+	//alert("enter propr time");
+}
