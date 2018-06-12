@@ -111,7 +111,26 @@ h1 { font-size: 25px; text-align: center; margin-bottom: 20px; }
                     <div class="ans">
                         <code>
                         var g = Math.max(a, b, c, d);<br>
-                        document.write(g);<br>
+                        document.write(g);<br><br>
+                        OR<br><br>
+                        var n1 = Number(prompt("Enter first number"));<br>
+                        var n2 = Number(prompt("Enter second number"));<br>
+                        var n3 = Number(prompt("Enter third number"));<br>
+                        var n4 = Number(prompt("Enter fourth number"));<br>
+                        var greatest;<br>
+                        if(n1>n2 && n1>n3 && n1>n4){<br>
+                            greatest = n1;<br>
+                        }<br>
+                        else if(n2>n1 && n2>n3 && n2>n4){<br>
+                            greatest = n2;<br>
+                        }<br>
+                        else if(n3>n1 && n3>n2 && n3>n4){<br>
+                            greatest = n3;<br>
+                        }<br>
+                        else{<br>
+                                greatest = n4;<br>
+                            }<br>
+                        alert("greatest number from entered numbers is"+" "+greatest );<br>
                         </code>
                     </div>
                 </div>
