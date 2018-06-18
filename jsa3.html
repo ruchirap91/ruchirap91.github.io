@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Assignment 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<style type="text/css">
+	/*CSS RESET STARTS*/
+	html,body,div,h1,p{margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+	body {line-height: 1;margin:0;}
+	/*CSS RESET ENDS*/
+	body{background: #000; color: #fff; font-family: arial, sans-serif; line-height: 1.2;}
+	.container{max-width: 1200px; margin: 60px auto;}
+	.list-wrap{background: #2b2b2b;border-radius: 10px;padding: 15px;}
+	.qstn, .ans{background: #787777;padding: 10px;margin-bottom: 10px;}
+	.answer, .runit{padding: 0 10px}
+	.answer{padding-bottom: 5px;}
+	/*.runit{display: none;}*/
+	.btn{background: #fff; font-weight: bold; outline: none; border: none; cursor: pointer; margin: 10px 0; text-transform: uppercase;padding: 10px}
+	.btn:hover{background:#eee;}
+	.answer p, .result{display: none;}
+	.block{margin-bottom: 20px;background:#4c4b4b;}
+	.runit .btn{padding: 10px 23px;}
+	h1{font-size: 25px; text-align: center;margin-bottom: 20px;}
+	.result.resultlast{display: block;}
+	code{font-size: 16px; line-height: 24px;}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1>JS Assignment 3</h1>
+		<div class="list-wrap">
+			<div class="block">
+				<div class="qstn">
+					<p>Question 1: What is the difference between following 2 functions if any? 
+						function checkAge(age) {
+						if (age > 18) {
+						return true;
+						} else {
+						return confirm('Did parents allow you?');
+						}
+						}
+
+						function checkAge(age) {
+						if (age > 18) {
+							return true;
+						}
+						return confirm('Did parents allow you?');
+					}
+					</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>Both functions do the same thing: they shoot a question if user is under 18.<br> But the second example is something called as guard clause.<br> Here we are basically checking for a condition, i.e. if the user is already 18 years old.<br> If he is, then we don't need to proceed ahead.<br> Unnecessary nesting is avoided using guard clauses.</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="182" data-theme-id="dark" data-slug-hash="aKpdmG" data-default-tab="html,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JS ASST1 Q1" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/aKpdmG/">JS ASST1 Q1</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 2: Rewrite above function using ternary operator</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p> This won't work, it throws an error "Unexpected token return"<br>
+						The ternary operator isn't meant to execute an action but rather to yield a value. <br>
+						return is a statement. It does not evaluate to anything. We are using a ternary operator, which has the syntax - condition ? expression1 : expression2 <br>
+						and evaluates to expression1 if the condition holds, and expression2 otherwise. This implies that expression1 and expression2 must themselves evaluate to something, and cannot be statements.<br>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 3: WAF to find min value from 2 numbers using ternary operators</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+						<code>
+						function minValue(a,b){<br>
+							var min;<br>
+							(a < b) ? min = a : min = b<br>
+              				document.write("Minimum value is:"+""+min);<br>
+						}<br>
+						minValue(60, 40);<br>
+						<code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="120" data-theme-id="dark" data-slug-hash="jKyWYm" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q3" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/jKyWYm/">JSA1 Q3</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 4: WAF to find prime numbers from 1-100</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+				    <code>
+					function printPrime(){<br>
+						for (var counter = 2; counter <= 100; counter++) { //prime nos start from 2<br>
+						document.write("Prime numbers between 1 and 100 are:"+"<br>");<br>
+    						var notPrime = false; //set flag<br>
+    						for (var i = 2; i <= counter; i++) {<br>
+        						if (counter%i=0 && i!=counter) {  // prime num is num div by 1 and itself. check if it is divisible by any other number and set flag true if it is.<br>
+            						notPrime = true;<br>
+        						}<br>
+    						}<br>
+    						if (notPrime === false ) { // for all prime nums, print them<br>
+                				document.write(counter + "<br>");<br>
+    						}<br>
+						}<br>
+					}<br>
+					printPrime();
+					</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="131" data-theme-id="dark" data-slug-hash="jKyWZm" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q4" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/jKyWZm/">JSA1 Q4</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 5: Implement IIFE</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+						<code>
+						(function(){<br>
+  							var x=  5 , y= 6;<br>
+  							document.write(x+"<br>"+y);<br>
+ 						})();<br>
+ 						document.write(x); //x is not defined error, since x, y become private to the iife<br>
+					</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="168" data-theme-id="dark" data-slug-hash="RJKaoG" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="RJKaoG" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/RJKaoG/">RJKaoG</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 6: Demonstrate difference between function declaration and expression</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+					The difference lies in how the browser loads them into the execution context.<br>
+					Function declarations load before any code is executed(since they get hoisted).<br>
+					Function expressions load only when the interpreter reaches that line of code.<br>
+					So if you try to call a function expression before it's loaded, you'll get an error.<br> If you call a function declaration instead, it'll always work, because no code can be called until all declarations are loaded.<br>
+						<code>
+							Function expression:<br><br>
+							alert(exprTest()); // ERROR! exprTest is not a function<br>
+							var exprTest = function() { return 5; } <br><br>
+
+							Function declaration:<br><br>
+							alert(decTest()); // Alerts 5. Declarations are loaded before any code can run.<br>
+							function decTest() { return 5; }<br>
+						</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="138" data-theme-id="dark" data-slug-hash="oyBxxg" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q5" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/oyBxxg/">JSA1 Q5</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 7: WAF to multi 2/multiple numbers. (use function parameters/arguments)</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+						<code>
+							function multiply(a,b){<br>
+								return(a*b);<br>
+							}<br>
+							document.write(multiply(3,4));<br>
+						</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="173" data-theme-id="dark" data-slug-hash="XYpdpQ" data-default-tab="js,result" data-user="ruchirap91" data-embed-version="2" data-pen-title="JSA1 Q7" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/XYpdpQ/">JSA1 Q7</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 8: Implement previous assignments (Take any 5 examples.) using functions e.g.: get todays day, change bg, check age, etc. try to use pure functions.</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+					<code>
+							1. Display the sum of 5 + 10, using two variables x and y.<br><br>
+
+							function addNum(x,y){<br>
+								var addition = x+y;<br>
+								document.write(addition);<br>
+							}<br>
+							addNum(5,10);<br><br>
+
+							2. Find greatest among 4 numbers<br>
+							function greatest(){
+							var n1 = Number(prompt("Enter first number"));<br>
+							var n2 = Number(prompt("Enter second number"));<br>
+							var n3 = Number(prompt("Enter third number"));<br>
+							var n4 = Number(prompt("Enter fourth number"));<br>
+							var greatest;<br>
+							if(n1>n2 && n1>n3 && n1>n4){<br>
+							greatest = n1;<br>
+							}<br>
+							else if(n2>n1 && n2>n3 && n2>n4){<br>
+							greatest = n2;<br>
+							}<br>
+							else if(n3>n1 && n3>n2 && n3>n4){<br>
+							greatest = n3;<br>
+							}<br>
+							else{<br>
+							greatest = n4;<br>
+							}<br>
+							alert("greatest number from entered numbers is"+" "+greatest );<br>
+							}<br><br>
+
+							3. Print/alert todays Day using switch & if-else. Also print a message saying "It is a weekend" if Saturday or Sunday! or be creative.<br><br>
+							var day = new Date();<br>
+                    		var today = day.getDay();<br>
+                    		if(today == 0){<br>
+                    		alert("It is Sunday. yes, tomorrow is Monday :p");<br>
+                    		}else if(today == 1){<br>
+                    		alert("It is Monday");<br>
+                    		}else if(today == 2){<br>
+                    		alert("It is Tuesday");<br>
+                    		}else if(today == 3){<br>
+                    		alert("It is Wednesday");<br>
+                    		}else if(today == 4){<br>
+                    		alert("It is Thursday");<br>
+                    		}else if(today == 5){<br>
+                    		alert("It is Friday");<br>
+                    		}else{<br>
+                    		alert("The weekend is here. it's Saturday! Yayyy");<br>
+                    		}<br><br>
+
+                    		4. Set the color (yellow:morning, blue:evening, black:night) of body tag based on your system time. showcase your creativity. <br><br>
+                    		<code>
+                    		function changeColor(){
+                    			var d = new Date();<br>
+                        		var time = d.getHours();<br>
+                        		if(time >= 6 && time <=16){<br>
+                        		document.body.style.backgroundColor = "yellow";<br>
+                        		}<br>
+                        		else if(time > 16 && time <20){<br>
+                        		document.body.style.backgroundColor = "blue";<br>
+                        		}<br>
+                        		else if(time >=20 && time < 6){<br>
+                        		document.body.style.backgroundColor = "black";<br>
+                        		}<br>
+                        		else{<br>
+                        		alert("enter proper time");<br>
+                        		}<br>
+                        	}
+                        	changeColor();<br><br>
+							5. Write a condition to check if the given age is of a teenager or no.<br><br>
+							fucntion checkTeenager(){
+							var result, age = +prompt('age?', '');<br>
+                        	(age <= 19 && age >= 13) ? result = 'teenager' : result = 'Not a teenager';<br>
+                        	alert(result);<br>
+                        	}
+                        	checkTeenager();
+                    		</code>
+
+					</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="btn runalert" onclick="runAlert()">Run Code</button>
+					<div class="result resultlast">
+						<div id="display-num"></div>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 9:  WAF: To check if palindrome</p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+						<code>
+						function palindrome(str) { // declaring a function palindrome with argument str<br>
+							var len = str.length; //check length of the string passed <br> 
+							for ( var i = 0; i < Math.floor(len/2); i++ ) { // in palindrome, apart from center letter(if present), other letters are exactly same at their particlular position, hence we only need to loop through half the length of the string<br> 
+							if (str[i] !== str[len - 1 - i]) { // here we check if the ith index matches with the same index from the other end, eg, in malayalam, we check if m matches with len-i-1  = 9-0-1 = 8 = m<br>
+								return false; // if it does not match, it is not palindrome so we return false<br>
+								}<br>
+							}<br>
+							document.write("palindrome"); // if it does not satisfy if statement, it implies that it is a palindrome. note that all letters are checked in the if condition since the if is within a for loop. <br>
+						}<br>
+						palindrome("malayalam"); //output: palindrome<br>
+						</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 10:WAF: To generate fibonacci series upto user entered number eg: if user enters 6.  output: 1 1 2 3 5 8 </p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+						<code>
+						function generateFibo(){<br>
+							var i, j = prompt("Enter in digits how many fibonacci numbers to generate: ","");<br>
+	    					var fib = []; // Initialize array<br>
+	    					fib[0] = 0;// every number in fibo series is a sum of prev 2 numbers. to start we initially need to declare 0 and 1, since their addition will kickstart the fibo sequence<br>
+	    					fib[1] = 1; <br>
+	    					document.write(fib[1]); // printing 1<br>
+	    					for(i=2; i<=j; i++)<br>
+	    					{<br>
+	        					// Next fibonacci number = previous + one before previous<br>
+	        					fib[i] = fib[i-2] + fib[i-1];<br>
+	        					document.write(fib[i]);<br>
+	    					}<br>
+    					}<br>
+    					generateFibo();<br>
+    				</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 11: create 3 pure functions <br>
+						* to get the maximum value from the given array.<br>
+						* to get the minimum value from the given array.<br>
+						* get query parameter value from the url provided.<br></p>
+				</div>
+				<div class="answer">
+					<button class="ans btn">View Answer</button>
+					<p>
+						<code>
+						Get max value from array<br><br>
+						function max(arr){<br>
+						 var max = arr[0];  //max variable is set to the first item in the array.<br>
+						 for(var i=1; i<arr.length; i++){  //A for loop is started which will start from 1 and keep looping for the length of the arr array. <br>
+						   if(arr[i] > max){ //Checks if the current array value is larger than the max value.<br>
+						     max = arr[i]; //So, first time around it checks if arr[1] is greater then max. If yes, max is set to arr[1] First loop checks if (12 > 4) it is so max = 12<br>
+							Second time around it checks if arr[2] is greater than max. Second loop checks if(3 > 12) it is not so max = 12<br>
+							Third time around it checks if arr[3] is greater then max. Third loop checks if (8 > 12) it is not so max = 12<br>
+							Fourth time around it checks if arr[4] is greater then max. Fourth loop checks if (0 > 12) it is not so max = 12<br>
+							Fifth time around it checks if arr[5] is greater then max. Fifth loop checks if (22 > 12) it is so max = 22<br>
+							Sixth time around it checks if arr[6] is greater then max. Sixth loop checks if (56 > 22) it is so max = 56<br>   
+						   }<br>
+						  }<br>
+						document.write(max);  //The loop has finished and max is returned. max is 56<br>
+						}<br>
+
+						max([4,12,3,8,0,22,56]);<br><br>
+						Get min value from array<br><br>
+						function min(arr){<br>
+						 var min = arr[0];<br>
+						 for(var i=1; i <arr.length; i++){ <br>
+						   if(arr[i] < min){ <br>
+						     min = arr[i];  <br> 
+						   }<br>
+						  }<br>
+						document.write(min);<br>
+						}<br>
+						min([4,12,3,8,0,22,56]);<br><br>
+
+						Exactly similar to the max function, but here we set a min value and change it when arr[i] is less than min<br><br>
+						Get query parameters<br><br>
+						function getPara(){
+							//http://ruchira.com/index.php?type=product&id=1234
+							var queryString = location.search; // ?type=product&id=1234
+							var urlParams = new URLSearchParams(location.search);
+							urlParams.has('type');  // true
+							urlParams.get('id');    // 1234
+							urlParams.getAll('id'); // ["1234"]
+							urlParams.toString();   // type=product&id=1234
+						}
+					</code>
+					</p>
+				</div>
+				<div class="runit" style="display:none">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 12: make a header with navigation bar at 200px from the top of the screen, make the header sticky once you scroll past it.</p>
+				</div>
+				<div class="answer" style="display:none">
+					<button class="ans btn">View Answer</button>
+					<p>
+
+					</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="265" data-theme-id="dark" data-slug-hash="NzwzZW" data-default-tab="result" data-user="ruchirap91" data-embed-version="2" data-pen-title="sticky header" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/NzwzZW/">sticky header</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 13: make 3 level navigation menu, using javascript. use hover/click to show child level menus</p>
+				</div>
+				<div class="answer" style="display:none">
+					<button class="ans btn">View Answer</button>
+					<p> <br>
+					</p>
+				</div>
+				<div class="runit showmenupage">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="265" data-theme-id="dark" data-slug-hash="qKVYEz" data-default-tab="result" data-user="ruchirap91" data-embed-version="2" data-pen-title="drpdwn" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/qKVYEz/">drpdwn</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="qstn">
+					<p>Question 14: implement tab switch functionality / name of tab and content should come from an object</p>
+				</div>
+				<div class="answer" style="display:none">
+					<button class="ans btn">View Answer</button>
+					<p> <br>
+					</p>
+				</div>
+				<div class="runit">
+					<button class="runcode btn">Run Code</button>
+					<div class="result">
+						<p data-height="265" data-theme-id="dark" data-slug-hash="JZOrjR" data-default-tab="result" data-user="ruchirap91" data-embed-version="2" data-pen-title="tabs" class="codepen">See the Pen <a href="https://codepen.io/ruchirap91/pen/JZOrjR/">tabs</a> by Ruchira Prabhudesai (<a href="https://codepen.io/ruchirap91">@ruchirap91</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.ans').click(function() {
+			$(this).next('p').toggle('fast', function() {
+
+			});
+		});
+		$('.runcode').click(function() {
+			$(this).next('.result').toggle('fast', function() {
+
+			});
+		});
+		function runAlert() {
+			var num = prompt("Please enter your favorite number:",);
+			if (num == null || num == "") {
+				txt = "User cancelled the prompt.";
+			} else {
+				txt = "Number you entered is " + num;
+				console.log(num);
+			}
+			document.getElementById("display-num").innerHTML = txt;
+
+		}
+		$('.runit.showmenupage').click(function(){
+   			window.location.href='jsa3-menu.html';
+		})
+	</script>
+</body>
+</html>
